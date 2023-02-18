@@ -1,0 +1,71 @@
+    <nav class="navbar navbar-expand-lg bg-body-primary">
+        <div class="container-fluid">
+          <button id="todaynews" value="news" (click)="getnews()" class="navbar-brand">News Application</button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item ms-2">
+                <button type="button" class="btn btn-dark" id="id_general" (click)="generalnews()">General</button>
+            </li>
+              <li class="nav-item ms-2">
+                <button type="button" class="btn btn-dark" id="id_sports" (click)="sportsnews()" >Sports</button>
+            </li>
+            <li class="nav-item ms-2">
+                <button type="button" class="btn btn-dark" id="id_entertainment" (click)="entertainmentnews()">Entertainment</button>
+            </li>
+              <li class="nav-item ms-2">
+                <button type="button" class="btn btn-dark" id="id_business" (click)="businessnews()">Business</button>
+            </li>
+            <li class="nav-item ms-2">
+                <button type="button" class="btn btn-dark" id="id_technology" (click)="technologynews()">Technology</button>
+            </li>
+              <li class="nav-item ms-2">
+                <button type="button" class="btn btn-dark" id="id_health" (click)="healthnews()">Health</button>
+            </li>
+            </ul>
+        </div>
+              
+    </div>
+    </nav>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="id_news">
+
+        <div class="col-12 col-md-6 mb-6 col-lg-4 d-flex" *ngFor="let d of todaynews ">
+          <div class="card shadow-light-lg mb-6 mb-md-0 lift lift-lg">
+              <img src={{d.urlToImage}} alt="" class="card-img-top">
+                <div class="card-body position-relative">
+                  <div class="position-relative text-right mt-n8 mr-n4 mb-3">
+                    <span class="badge badge-pill badge-success">
+                      <span class="h6 text-uppercase"><i class="fa fa-check"></i></span>
+                    </span>
+                  </div>
+      
+                  <h3 class="text-capitalize" style="font-family:poppins" >
+                    {{d.title}}
+                  </h3>
+      
+                  <p class="text-muted">
+                    {{d.description}}
+                  </p>
+                  <button type="button" href="#showModal" id={{d.url}} data-toggle="modal" class="btn btn-danger font-weight-bold text-decoration-none" onclick="showCourses(this.id)">
+                    Read more  <i class="fe fe-arrow-right ml-3"></i>
+                  </button>
+                  <p>{{d.time}}</p>
+      
+                </div>
+                </div>
+  
+        
+  
+  
+        </div>
+
+
+    </div>
+
+
+
+
+
